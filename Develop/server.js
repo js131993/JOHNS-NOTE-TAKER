@@ -28,7 +28,6 @@ app.post('/api/notes/:id', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
   noteData.destroy(req.body);
-  fs.writeFile("./db/db.json", JSON.stringify(noteData));
 });
 //Should I have fs.writeFile in my delete route above?
 
