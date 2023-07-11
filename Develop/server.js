@@ -27,7 +27,7 @@ app.post('/api/notes/:id', (req, res) => {
 //fs.writefile is similar to saving to database.
 
 app.delete('/api/notes/:id', (req, res) => {
-  noteData.pop(req.body);
+  noteData.destroy(req.body);
   fs.writeFile("./db/db.json", JSON.stringify(noteData));
 });
 //Should I have fs.writeFile in my delete route above?
