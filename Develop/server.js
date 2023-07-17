@@ -32,12 +32,13 @@ app.post('/api/notes', (req, res) => {
     noteData.push(req.body);
     //req.body holds each new note push is putting into db.json
     fs.writeFileSync("./db/db.json", JSON.stringify(noteData));
+    res.sendStatus(200);
 });
 //fs.writefile is similar to saving to database.
 
 app.delete('/api/notes/:id', (req, res) => {
   // comparing two numbers below. filters out note with matching id.
-  noteData = noteData.filter((n) => req.params.id !== n.id);
+  noteData = noteData.filter((n) => req.params.id != n.id);
   //filter is a higher order function, takes in a function and it run against every element in noteData, for every note, filter out what we don't want
   fs.writeFileSync("./db/db.json", JSON.stringify(noteData));
   res.sendStatus(200);
