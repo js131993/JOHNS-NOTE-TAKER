@@ -5,7 +5,7 @@ const fs = require("fs");
 let noteData = require('./db/db.json');
 //array of notes--> arrays have built in js methods
 const PORT = process.env.port || 3002;
-
+console.log("PORT NUMBER IS", PORT)
 const app = express();
 
 //line below tells how to parse the data from json
