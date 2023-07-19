@@ -4,7 +4,7 @@ const fs = require("fs");
 //needs express and path 
 let noteData = require('./db/db.json');
 //array of notes--> arrays have built in js methods
-const PORT = 3002;
+const PORT = process.env.port || 3002;
 
 const app = express();
 
